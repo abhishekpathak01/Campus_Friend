@@ -28,7 +28,7 @@ class TopButton extends StatelessWidget {
         ),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min, // 👈 tight wrap
+        mainAxisSize: MainAxisSize.min, 
         children: [
           Icon(
             icon,

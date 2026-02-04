@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home_tilebutton.dart';
+import 'attendance.dart';
+import 'class.dart';
+import 'exam.dart';
 
 class homepageee extends StatelessWidget {
   const homepageee({super.key});
@@ -28,19 +31,44 @@ class homepageee extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.school),
               title: Text("Class"),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context); 
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Class_schedule(),
+                  ),
+                );
+              },
             ),
 
             ListTile(
               leading: Icon(Icons.event),
               title: Text("Exam"),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context); 
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ExamHomeScreen(),
+                  ),
+                );
+              },
             ),
 
             ListTile(
               leading: Icon(Icons.assignment),
               title: Text("Attendance"),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context); 
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AttendanceHomeScreen(),
+                  ),
+                );
+              },
+
             ),
 
             ListTile(
@@ -78,11 +106,45 @@ class homepageee extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  TopButton(text:"Class", icon:Icons.school, onPressed: (){}),
+                  TopButton(text:"Class", icon:Icons.school, onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Class_schedule(),
+                        ),
+                      );
+                  }
+            ),
                   SizedBox(width: 10),
-                  TopButton(text:"Exam", icon:Icons.assignment, onPressed: (){}),
+
+                  TopButton(
+                    text: "Exam",
+                    icon: Icons.assignment,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ExamHomeScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  
                   SizedBox(width: 10),
-                  TopButton(text:"Attendance", icon:Icons.event, onPressed: (){}),
+
+                  TopButton(
+                    text: "Attendance",
+                    icon: Icons.event_available,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AttendanceHomeScreen(),
+                        ),
+                      );
+                    },
+                  ),
+
                   SizedBox(width: 10),
                   TopButton(text:"Note",icon: Icons.book, onPressed: (){}),
                 ],
@@ -147,39 +209,6 @@ class homepageee extends StatelessWidget {
             ),
 
             const SizedBox(height: 150),
-
-            
-            // Container(
-              
-            //   width: double.infinity,
-            //   padding: const EdgeInsets.all(20),
-            //   decoration: BoxDecoration(
-            //     color: const Color.fromARGB(59, 242, 3, 118),
-            //     borderRadius: BorderRadius.circular(14),
-            //   ),
-
-            //   child: Column(
-            //     crossAxisAlignment: CrossAxisAlignment.start,
-            //     children: const [
-            //       Text(
-            //         "Thank You 🙏",
-            //         style: TextStyle(
-            //           color: Colors.white,
-            //           fontSize: 20,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //       ),
-            //       SizedBox(height: 8),
-            //       Text(
-            //         "Explore Out More stuff :) ...",
-            //         style: TextStyle(
-            //           color: Colors.white70,
-            //           fontSize: 16,
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
           ],
         ),
       ),
